@@ -34,7 +34,6 @@ import awais.instagrabber.utils.AppExecutors;
 import awais.instagrabber.utils.Constants;
 import awais.instagrabber.utils.CookieUtils;
 import awais.instagrabber.utils.CoroutineUtilsKt;
-import awais.instagrabber.utils.FlavorTown;
 import awais.instagrabber.utils.NavigationHelperKt;
 import awais.instagrabber.utils.ProcessPhoenix;
 import awais.instagrabber.utils.TextUtils;
@@ -291,7 +290,6 @@ public class MorePreferencesFragment extends BasePreferencesFragment {
                 preference -> {
                     if (BuildConfig.isPre) return true;
                     if (activity == null) return false;
-                    FlavorTown.updateCheck(activity, true);
                     return true;
                 })
         );
