@@ -103,6 +103,11 @@ android {
             universalApk true
         }
     }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/LICENSE.md', 'META-INF/LICENSE-notice.md', 'META-INF/atomicfu.kotlin_module', 'META-INF/AL2.0', 'META-INF/LGPL2.1']
+        }
+    }
 
 
     android.applicationVariants.all { variant ->
@@ -142,15 +147,6 @@ android {
         }
     }
 
-    packagingOptions {
-        // Exclude file to avoid
-        // Error: Duplicate files during packaging of APK
-        exclude 'META-INF/LICENSE.md'
-        exclude 'META-INF/LICENSE-notice.md'
-        exclude 'META-INF/atomicfu.kotlin_module'
-        exclude 'META-INF/AL2.0'
-        exclude 'META-INF/LGPL2.1'
-    }
 
     testOptions.unitTests {
         includeAndroidResources = true
