@@ -6,7 +6,6 @@ import awais.instagrabber.repositories.serializers.CaptionDeserializer
 import awais.instagrabber.utils.Utils
 import awais.instagrabber.webservices.interceptors.AddCookiesInterceptor
 import awais.instagrabber.webservices.interceptors.IgErrorsInterceptor
-//import awais.instagrabber.webservices.interceptors.LoggingInterceptor
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import okhttp3.Cache
@@ -28,9 +27,6 @@ object RetrofitFactory {
             cache(cache)
             addInterceptor(AddCookiesInterceptor())
             addInterceptor(igErrorsInterceptor)
-            if (BuildConfig.DEBUG) {
-                // addInterceptor(LoggingInterceptor())
-            }
         }
         val gson = GsonBuilder().apply {
             setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)

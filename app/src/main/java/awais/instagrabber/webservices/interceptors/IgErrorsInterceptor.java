@@ -34,6 +34,9 @@ public class IgErrorsInterceptor implements Interceptor {
     @Override
     public Response intercept(@NonNull final Chain chain) throws IOException {
         final Request request = chain.request();
+        Log.d(TAG, "URL: " + request.url());
+        Log.d(TAG, "Headers: " + request.headers());
+        Log.d(TAG, "Body: " + request.body());
         final Response response = chain.proceed(request);
         if (response.isSuccessful()) {
             return response;
@@ -70,6 +73,7 @@ public class IgErrorsInterceptor implements Interceptor {
         if (body == null) return;
         try {
             final String bodyString = body.string();
+            // Egaa erori
             Log.d(TAG, "checkError: " + bodyString);
             JSONObject jsonObject = null;
             try {
